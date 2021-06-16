@@ -1,0 +1,23 @@
+/* 거의 모든 파일에 사용되는 공용 모듈 */
+
+/* CSS 선택자 구분 
+ * # : ID 선택자(우선순위 상)
+ * . : 클래스 선택자(우선순위 중)
+ * 아무 표기 없이 선택자 이름만 있으면 : 태그 선택자(우선순위 하)
+*/
+
+/* body 태그의 여백(margin)을 0px로 설정, 텍스트 가운데 정렬 */
+body { margin:0px; text-align:center; }
+/* body 태그의 스크롤바를 삭제(none으로 처리)함. */
+body::-webkit-scrollbar { display:none; }
+/* box 클래스. 넓이를 1080px로, 높이를 720px로, 배경이미지를 img/title/title.jpg로 설정, 배경 이미지가 영역에 꽉 차게 설정 */
+.box { width: 1080px; height:720px; 
+	background-image: url("../img/title/title.jpg"); /* '../'는 css 폴더에서 벗어나 상위 폴더로 이동시키는 지시. */
+	background-size: cover;
+}
+/* *미디어 쿼리 : 화면의 크기에 따라 반응하며, 반응하면 중괄호 안의 코드를 실행하는 기술. */
+/* 현재 화면 높이가 720px보다 작다면 해당 미디어 쿼리를 실행. */
+@media (max-height:720px){
+	/* box 클래스의 높이를 620px로 줄임. */
+	.box { height:620px; }
+}

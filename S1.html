@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<!-- html 태그를 열고 언어를 ko(korean)로 설정 -->
+<html lang="ko">
+	<!-- *<head> 태그는 html 파일에 대한 설정과 CSS와 자바스크립트 코드 등의 사전 정의 코드가 들어감.  
+		 *이는 C/C++ 언어의 헤더 파일과 같은 개념
+	-->
+	<head>
+		<!-- *페이지 charset = 인코딩 언어를 utf-8(유니코드)로 설정.
+			 *http-equiv="content-type"에 정의한 charset=utf-8 또한 위와 같은 의미.
+		-->
+		<meta charset="utf-8"/>
+		<meta http-equiv="content-type" content="text/html; charset-utf-8"/>
+		<!-- *모바일 디바이스로 접속 시에 화면의 크기를 조정함. 넓이(width)를 1080px로 설정-->
+		<meta name="viewport" content="width=1080px">
+		
+		<!-- 웹페이지 제목 -->
+		<title>조선귀성전</title>
+		
+		<!-- 웹페이지에 favicon을 적용함. -->
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+		
+		<!-- 이 페이지에서만 유효한 css 코드 -->
+		<style type="text/css">
+			.box { background-image: url("img/무덤.jpg"); }
+			#text { color: white; font-size:20px; width:360px; }
+			.ha { width:360px; height:600px; }
+			.wife { width:360px; height:600px; }
+			p { border:1px solid gray; }
+			td { width: 360px; }
+		</style>
+		<!-- 미리 정의된 공용 css 모듈을 불러옴. -->
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+		<link rel="stylesheet" type="text/css" href="css/btns.css">
+		
+		<!-- 이 페이지에서만 고유한 자바스크립트 코드 -->
+		<script language="javascript">
+			/* 아래는 마우스 우클릭 방지 코드.
+			 * 마우스 우클릭을 감지하는 oncontextmenu 이벤트를 함수로 변환하여 false로 반환하도록 함.
+			 * 결과적으로, 우클릭을 할 때마다 false 값이 반환되어 우클릭 이벤트가 실행되지 않음.
+			 */
+			document.oncontextmenu = function(e){
+				return false;
+			}
+		</script>
+		<!-- 미리 정의된 공용 자바스크립트 모듈을 불러옴. -->
+		<script src="js/tools.js"></script>
+	</head>
+	
+	<!-- *<body> 태그는 웹페이지 본문 내용이 들어감.
+		 *C/C++ 언어의 main() 함수와 유사한 역할.
+	-->
+	<body>
+		<!-- 이 영역에 #container ID 적용 -->
+		<div id="container">
+			<div>
+				<!-- .box 클래스가 적용된 테이블 생성 -->
+				<!-- 게임 화면이 담길 박스는 테이블로  -->
+				<table border="0" align="center" class="box">
+					<!-- <tr></tr> : 테이블의 행(row) -->
+					<tr>
+						<td>
+							<img src="img/ha/슬픔.png" class="ha">
+						</td> 
+						<!-- <td></td> 테이블의 열 -->
+						<td>
+							<p id="text"></p>
+								<script language="javascript">
+									// 출력할 지문들을 모아놓은 배열.
+									const msg = ['늦은 밤, 하 서방 아내의 산소.', 
+									'하 서방은 아내의 묘를 바라보며 통곡하고 있다.'];
+									const ha_msg = ['부인, 어찌하여 이른 때에 이곳에 와 있는 겁니까...', 
+									'어찌하여 날 놓고 먼저 가버리는 겁니까... 그 일이 있었던 지 3년이 지났는데도 영 잊혀지지가 않습니다.',
+									'일전에 그 호랑이 녀석으로부터 부인을 구하지 못한 내가 원망스럽습니다..']; // 성 서방의 대사
+									const wife_msg = ['아직', '안정했다']; // 아내의 대사
+									
+									document.querySelector('#text').innerHTML = ha_msg[0];
+								</script>
+							<button class="next_btn"
+							onclick="printMsg(ha_msg, '');">
+								다음
+							</button>
+						</td>
+						<td>
+							<!-- <img src="img/seong/무표정.png" class="wife"> -->
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

@@ -12,10 +12,10 @@
 }
 
 /* next_btn 클래스. [다음] 버튼. 버튼의 크기를 100px로, 글꼴을 궁서로, 글자 크기를 20px로, 테두리를 없애고(none),
-글자 색을 노란색(yellow)로 함. */
+버튼 배경색을 검정색(black)으로 하고, 글자 색을 노란색(yellow)로 함. */
 .next_btn {
 	width: 100px; font-family:궁서; font-size: 20px;
-	background:none; color:yellow; 
+	background:black; color:yellow; 
 }
 /* [다음] 버튼에 마우스를 갖다댈 시 글씨를 굵은 글씨(bold)로 함. */
 .next_btn:hover{

@@ -23,7 +23,7 @@
 		<!-- 이 페이지에서만 유효한 css 코드 -->
 		<style type="text/css">
 			.box { background-color:black; color:white; }
-			.text { font-size:24px; font-family:궁서; color:white; }
+			#text { font-size:22px; font-family:궁서; color:white; }
 		</style>
 		<!-- 미리 정의된 공용 css 모듈을 불러옴. -->
 		<link rel="stylesheet" type="text/css" href="css/base.css">
@@ -39,6 +39,8 @@
 				return false;
 			}
 		</script>
+		<!-- 미리 정의된 공용 자바스크립트 모듈을 불러옴. -->
+		<script src="js/tools.js"></script>
 	</head>
 	
 	<!-- *<body> 태그는 웹페이지 본문 내용이 들어감.
@@ -54,17 +56,27 @@
 					<!-- <tr></tr> : 테이블의 행(row) -->
 					<tr>
 						<!-- <td></td> 테이블의 열 -->
-						<td class="text">
-							<script language="javascript">
-							const msg = ['1429년, 장산 인근에 살고 있는 성 서방이라 불리우는 사내가 있었다.', 
-							'그 사내는 3년 전 웬 호랑이의 습격으로 아내를 잃고 홀로 살고 있었는데,', 'dasd'];
-							var i=0;
-							function prologue(){
-								document.write(msg[i]+'<br>');
-								i++;
-							}
-							setInterval(prologue, 2000);
-							</script>
+						<td>
+							<!-- 프롤로그 지문 출력을 위해 사용하는 ID선택자 'text' -->
+							<p id="text">
+								<script language="javascript">
+									// 프롤로그에 출력할 지문들을 모아놓은 배열.
+									const msg = ['1429년(세종 11년), 장산 인근에 성 서방이라 불리우는 사내가 살고 있었다.', 
+									'그 사내는 3년 전인 1426년에 웬 호랑이의 습격으로 아내를 잃고 홀로 살고 있었는데,',
+									'그는 아내에 대한 그리움을 잊지 못해 매월 아내를 위해 제사를 지내는 것으로 장산 동네에 유명했다.',
+									'1429년 4월 26일, 성 서방은 이 때에도 어김없이 제사를 지내러 아내의 산소로 향하였으니...'];
+									
+									// 첫 번째 메시지를 출력
+									document.querySelector('#text').innerHTML = msg[0];
+								</script>
+							</p>
+							<!-- *게임 시작 버튼에 .next_btn 클래스를 적용
+								 *버튼 클릭 시 위에 정의한 printMsg() 함수를 실행함.
+							-->
+							<button class="next_btn"
+							onclick="printMsg(msg, 'S1.html');">
+								다음
+							</button>
 						</td>
 					</tr>
 				</table>

@@ -15,7 +15,7 @@
 버튼 배경색을 검정색(black)으로 하고, 글자 색을 노란색(yellow)로 함. */
 .next_btn {
 	width: 100px; font-family:궁서; font-size: 20px;
-	background:black; color:yellow; 
+	background-:black; color:yellow; 
 }
 /* [다음] 버튼에 마우스를 갖다댈 시 글씨를 굵은 글씨(bold)로 함. */
 .next_btn:hover{
